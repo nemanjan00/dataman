@@ -1,5 +1,7 @@
 # dataman
 
+![npm](https://img.shields.io/npm/dw/dataman)
+
 Library for managing data in redis-like storage engines
 
 ![](https://github.com/nemanjan00/dataman/blob/master/logo/logo-100.png?raw=true)
