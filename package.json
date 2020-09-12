@@ -1,6 +1,6 @@
 {
   "name": "dataman",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Library for managing data in redis-like storage engines",
   "main": "index.js",
   "repository": "git@github.com:nemanjan00/dataman.git",
