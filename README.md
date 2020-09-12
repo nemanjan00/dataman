@@ -12,6 +12,8 @@ Library for managing data in redis-like storage engines
 
 * [Backends](#backends)
 * [Installation](#installation)
+	* [npm](#npm)
+	* [yarn](#yarn)
 * [Usage](#usage)
 * [Authors](#authors)
 
@@ -20,6 +22,18 @@ Library for managing data in redis-like storage engines
 ## Backends
 
 ## Installation
+
+### npm
+
+```bash
+npm install dataman --save
+```
+
+### yarn
+
+```bash
+yarn add dataman
+```
 
 ## Usage
 
