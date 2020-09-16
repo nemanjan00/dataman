@@ -12,6 +12,7 @@ Library for managing data in redis-like storage engines
 <!-- vim-markdown-toc GFM -->
 
 * [Backends](#backends)
+* [Structures](#structures)
 * [Installation](#installation)
 	* [npm](#npm)
 	* [yarn](#yarn)
@@ -25,6 +26,16 @@ Library for managing data in redis-like storage engines
 * Redis
 
 * Memory (for single instance projects, can be serialized and deserialized into)
+
+## Structures
+
+* Queue
+
+* List
+
+* Hashmap
+
+* String/Number/Boolean
 
 ## Installation
 
