@@ -19,6 +19,15 @@ module.exports = {
 	 */
 	pop: function(queueName) {
 		console.log("This is interface, do not call it", queueName);
-	}
+	},
+
+	/**
+	 * Get queue length
+	 * @param {string} queueName Name of the queue
+	 * @returns {Promise<number>}
+	 */
+	length: function(queueName) {
+		console.log("This is interface, do not call it", queueName);
+	},
 };
 
