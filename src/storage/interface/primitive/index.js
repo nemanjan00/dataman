@@ -16,7 +16,15 @@ module.exports = {
 	 */
 	get: function(queueName) {
 		console.log("This is interface, do not call it", queueName);
+	},
+
+	/**
+	 * Delete
+	 * @param {string} name Name
+	 * @returns {Promise}
+	 */
+	delete: function(name) {
+		console.log("This is interface, do not call it", name);
 	}
 };
-
 

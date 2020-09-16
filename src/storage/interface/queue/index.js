@@ -26,5 +26,14 @@ module.exports = {
 	length: function(queueName) {
 		console.log("This is interface, do not call it", queueName);
 	},
+
+	/**
+	 * delete
+	 * @param {string} name name
+	 * @returns {promise}
+	 */
+	delete: function(name) {
+		console.log("this is interface, do not call it", name);
+	}
 };
 
