@@ -2,10 +2,10 @@
  * Storage instance
  */
 module.exports = {
-	queue: Object,
-	list: Object,
-	hash: Object,
-	primitive: Object,
-	set: Object
+	queue: require("./queue"),
+	list: require("./list"),
+	hash: require("./hash"),
+	primitive: require("./primitive"),
+	set: require("./set")
 };
 
