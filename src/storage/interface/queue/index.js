@@ -1,6 +1,3 @@
-/**
- * Storage instance
- */
 module.exports = {
 	/**
 	 * Push element to queue
