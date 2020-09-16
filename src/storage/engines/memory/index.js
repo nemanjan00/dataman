@@ -1,4 +1,6 @@
-module.exports = {
-	engineName: "memory"
+module.exports = () => {
+	return {
+		engineName: "memory"
+	};
 };
 

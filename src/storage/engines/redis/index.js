@@ -1,4 +1,6 @@
-module.exports = {
-	engineName: "redis"
+module.exports = () => {
+	return {
+		engineName: "redis"
+	};
 };
 

@@ -15,6 +15,6 @@ module.exports = (connectionUrl) => {
 	const connection = url.parse(connectionUrl);
 	const storage = engines[connection.protocol.split(":")[0]] || engines.main;
 
-	return storage;
+	return storage(connectionUrl);
 };
 
