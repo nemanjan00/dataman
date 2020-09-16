@@ -1,6 +1,7 @@
 # dataman
 
 ![npm](https://img.shields.io/npm/dw/dataman)
+[![Build Status](https://travis-ci.com/nemanjan00/dataman.svg?branch=master)](https://travis-ci.com/nemanjan00/dataman)
 
 Library for managing data in redis-like storage engines
 
