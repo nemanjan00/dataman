@@ -5,11 +5,10 @@ const url = require("url");
  */
 
 /**
- * @typedef {!function(!string):!StorageInterface} StorageFactory
- */
-
-/**
- * @type {StorageFactory}
+ * Create storage instance
+ *
+ * @param {string} connectionUrl
+ * @returns {StorageInterface} storage
  */
 module.exports = (connectionUrl) => {
 	console.log(url.parse(connectionUrl));

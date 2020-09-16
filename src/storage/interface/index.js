@@ -1,5 +1,11 @@
+/**
+ * Storage instance
+ */
 module.exports = {
-	a: true,
-	b: true
+	queue: Object,
+	list: Object,
+	hash: Object,
+	primitive: Object,
+	set: Object
 };
 
