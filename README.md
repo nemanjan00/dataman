@@ -1,4 +1,4 @@
-# dataman
+# dataman (https://github.com/themes/tactile/images/octocat-icon.png)](https://github.com/nemanjan00/dataman#dataman)
 
 ![npm](https://img.shields.io/npm/dw/dataman)
 [![Build Status](https://travis-ci.com/nemanjan00/dataman.svg?branch=master)](https://travis-ci.com/nemanjan00/dataman)
