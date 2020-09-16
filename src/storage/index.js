@@ -1,4 +1,5 @@
 const url = require("url");
+const engines = require("./engines");
 
 /**
  * @typedef {import('./interface')} StorageInterface
@@ -11,8 +12,8 @@ const url = require("url");
  * @returns {StorageInterface} storage
  */
 module.exports = (connectionUrl) => {
-	console.log(url.parse(connectionUrl));
-	const storage = {};
+	const connection = url.parse(connectionUrl);
+	const storage = engines[connection.protocol.split(":")[0]] || engines.main;
 
 	return storage;
 };
