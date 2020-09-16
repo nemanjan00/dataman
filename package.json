@@ -2,12 +2,27 @@
   "name": "dataman",
   "version": "0.0.1",
   "description": "Library for managing data in redis-like storage engines",
-  "main": "index.js",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "nyc mocha --reporter spec --timeout 60000 tests/index.js",
+    "lint": "./dev/lint.sh"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
   "repository": "https://github.com/nemanjan00/dataman.git",
   "author": "nemanjan00 <nemanjan00@gmail.com>",
   "license": "MIT",
   "private": false,
   "optionalDependencies": {
     "redis": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "husky": "^4.3.0",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0"
   }
 }

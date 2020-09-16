@@ -1,0 +1,35 @@
+{
+    "ignorePatterns": [ "public/js/*.js", "node_modules/**", "out/**" ],
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true,
+        "commonjs": true,
+        "mocha": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2018
+    },
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-redeclare": 1,
+        "no-trailing-spaces": "error"
+    }
+}
