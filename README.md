@@ -22,6 +22,10 @@ Library for managing data in redis-like storage engines
 
 ## Backends
 
+* Redis
+
+* Memory (for single instance projects, can be serialized and deserialized into)
+
 ## Installation
 
 ### npm
