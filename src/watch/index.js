@@ -3,7 +3,7 @@
  * Returns original object wrapped in a way that allows you to see changes made
  * to it by accessing `object.changes`
  *
- * @param {} data
+ * @param {object} data
  */
 module.exports = function(data) {
 	const handler = {
