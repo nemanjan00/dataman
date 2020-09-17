@@ -4,11 +4,9 @@ module.exports = (url) => {
 	const engine = {};
 
 	// This is dont for testing purposes, do not refactor!
-	if(url != undefined) {
-		engine.client = redis.createClient({
-			url
-		});
-	}
+	engine.client = redis.createClient({
+		url
+	});
 
 	return {
 		queue: require("./queue")(engine),

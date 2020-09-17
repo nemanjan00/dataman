@@ -1,15 +1,39 @@
-module.exports = () => {
+module.exports = (engine) => {
 	return {
 		set: function(name, element) {
-			console.log("This is interface, do not call it", name, element);
+			return new Promise((resolve, reject) => {
+				engine.client.set(name, element, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					resolve(data);
+				});
+			});
 		},
 
 		get: function(name) {
-			console.log("This is interface, do not call it", name);
+			return new Promise((resolve, reject) => {
+				engine.client.get(name, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					resolve(data);
+				});
+			});
 		},
 
 		delete: function(name) {
-			console.log("This is interface, do not call it", name);
+			return new Promise((resolve, reject) => {
+				engine.client.del(name, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					resolve(data);
+				});
+			});
 		}
 	};
 };
