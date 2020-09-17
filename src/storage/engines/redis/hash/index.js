@@ -30,8 +30,7 @@ module.exports = (engine) => {
 					}
 
 					if(data == null) {
-						resolve({});
-						return;
+						return resolve(null);
 					}
 
 					Object.keys(data).forEach(key => {

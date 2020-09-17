@@ -1,19 +1,35 @@
-module.exports = () => {
+module.exports = (engine) => {
 	return {
-		push: function(listName, element) {
-			console.log("This is interface, do not call it", listName, element);
+		push: function(name, element) {
+			if(engine.database[name] === undefined) {
+				engine.database[name] = [];
+			}
+
+			engine.database[name].push(element);
+
+			return Promise.resolve();
 		},
 
-		pop: function(listName) {
-			console.log("This is interface, do not call it", listName);
+		pop: function(name) {
+			if(engine.database[name] === undefined) {
+				engine.database[name] = [];
+			}
+
+			return Promise.resolve(engine.database[name].pop());
 		},
 
-		length: function(listName) {
-			console.log("This is interface, do not call it", listName);
+		length: function(name) {
+			if(engine.database[name] === undefined) {
+				engine.database[name] = [];
+			}
+
+			return Promise.resolve(engine.database[name].length);
 		},
 
 		delete: function(name) {
-			console.log("This is interface, do not call it", name);
+			delete engine.database[name];
+
+			return Promise.resolve();
 		}
 	};
 };

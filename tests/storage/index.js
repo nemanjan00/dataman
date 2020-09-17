@@ -90,8 +90,92 @@ describe("watch", function() {
 					}).catch(done);
 				});
 
-				it("Does not return deleted primitives", function(done) {
-					engine.primitive.get("testHash").then((result) => {
+				it("Does not return deleted hash", function(done) {
+					engine.hash.get("testHash").then((result) => {
+						if(result != null) {
+							return done(new Error("Incorrect value returned"));
+						}
+
+						done();
+					}).catch(done);
+				});
+			});
+
+			describe("list", function() {
+				const engine = engines[engineName]();
+
+				it("Pushes to list", function(done) {
+					engine.list.push("testList", 1).then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Pushes more elements to list", function(done) {
+					engine.list.push("testList", 2).then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Pops last one", function(done) {
+					engine.list.pop("testList").then((result) => {
+						if(result == 2) {
+							return done();
+						}
+
+						done(new Error("Incorrect value returned"));
+					}).catch(done);
+				});
+
+				it("Deletes list", function(done) {
+					engine.list.delete("testList").then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Does not return deleted list", function(done) {
+					engine.list.pop("testList").then((result) => {
+						if(result != null) {
+							return done(new Error("Incorrect value returned"));
+						}
+
+						done();
+					}).catch(done);
+				});
+			});
+
+			describe("queue", function() {
+				const engine = engines[engineName]();
+
+				it("Pushes to queue", function(done) {
+					engine.queue.push("testQueue", 1).then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Pushes more elements to queue", function(done) {
+					engine.queue.push("testQueue", 2).then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Pops first one", function(done) {
+					engine.queue.pop("testQueue").then((result) => {
+						if(result == 1) {
+							return done();
+						}
+
+						done(new Error("Incorrect value returned"));
+					}).catch(done);
+				});
+
+				it("Deletes queue", function(done) {
+					engine.queue.delete("testQueue").then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Does not return deleted queue", function(done) {
+					engine.queue.pop("testQueue").then((result) => {
 						if(result != null) {
 							return done(new Error("Incorrect value returned"));
 						}

@@ -1,19 +1,51 @@
-module.exports = () => {
+module.exports = (engine) => {
 	return {
-		push: function(listName, element) {
-			console.log("This is interface, do not call it", listName, element);
+		push: function(name, element) {
+			return new Promise((resolve, reject) => {
+				engine.client.lpush(name, element, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					resolve(data);
+				});
+			});
 		},
 
-		pop: function(listName) {
-			console.log("This is interface, do not call it", listName);
+		pop: function(name) {
+			return new Promise((resolve, reject) => {
+				engine.client.lpop(name, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					resolve(data);
+				});
+			});
 		},
 
-		length: function(listName) {
-			console.log("This is interface, do not call it", listName);
+		length: function(name) {
+			return new Promise((resolve, reject) => {
+				engine.client.llen(name, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					resolve(data);
+				});
+			});
 		},
 
 		delete: function(name) {
-			console.log("This is interface, do not call it", name);
+			return new Promise((resolve, reject) => {
+				engine.client.del(name, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					resolve(data);
+				});
+			});
 		}
 	};
 };
