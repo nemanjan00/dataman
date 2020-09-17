@@ -55,6 +55,42 @@ describe("watch", function() {
 					}).catch(done);
 				});
 			});
+
+			describe("hash", function() {
+				const engine = engines[engineName]();
+
+				it("Stores hash", function(done) {
+					engine.hash.set("testHash", {a: 1}).then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Returns hashes", function(done) {
+					engine.hash.get("testHash").then((result) => {
+						if(result.a == 1) {
+							return done();
+						}
+
+						done(new Error("Incorrect value returned"));
+					}).catch(done);
+				});
+
+				it("Deletes hashes", function(done) {
+					engine.hash.delete("testHash").then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Does not return deleted primitives", function(done) {
+					engine.primitive.get("testHash").then((result) => {
+						if(result != null) {
+							return done(new Error("Incorrect value returned"));
+						}
+
+						done();
+					}).catch(done);
+				});
+			});
 		});
 	});
 });
