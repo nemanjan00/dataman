@@ -126,6 +126,16 @@ describe("watch", function() {
 					}).catch(done);
 				});
 
+				it("Returns correct length", function(done) {
+					engine.list.length("testList").then((result) => {
+						if(result == 1) {
+							return done();
+						}
+
+						return done(new Error("Incorrect value returned"));
+					}).catch(done);
+				});
+
 				it("Deletes list", function(done) {
 					engine.list.delete("testList").then(() => {
 						done();
@@ -165,6 +175,16 @@ describe("watch", function() {
 						}
 
 						done(new Error("Incorrect value returned"));
+					}).catch(done);
+				});
+
+				it("Returns correct length", function(done) {
+					engine.queue.length("testQueue").then((result) => {
+						if(result == 1) {
+							return done();
+						}
+
+						return done(new Error("Incorrect value returned"));
 					}).catch(done);
 				});
 
