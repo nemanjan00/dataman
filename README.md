@@ -27,7 +27,7 @@ Library for managing data in redis-like storage engines
 ### Getting/setting primitive as example
 
 ```javascript
-const dataman = require("dataman);
+const dataman = require("dataman");
 const storage = dataman.storage("memory://");
 
 storage.primitive.set("test", "testValue").then(() => {
