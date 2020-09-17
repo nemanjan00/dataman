@@ -60,7 +60,16 @@ describe("watch", function() {
 				const engine = engines[engineName]();
 
 				it("Stores hash", function(done) {
-					engine.hash.set("testHash", {a: 1}).then(() => {
+					engine.hash.set("testHash", {
+						a: 1,
+						b: true,
+						c: "string",
+						e: "null",
+						f: "4.5",
+						g: "undefined",
+						h: "NaN",
+						i: "false"
+					}).then(() => {
 						done();
 					}).catch(done);
 				});
