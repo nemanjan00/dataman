@@ -17,6 +17,7 @@ Library for managing data in redis-like storage engines
 	* [npm](#npm)
 	* [yarn](#yarn)
 * [Usage](#usage)
+	* [Getting/setting primitive as example](#gettingsetting-primitive-as-example)
 * [Authors](#authors)
 
 <!-- vim-markdown-toc -->
@@ -52,6 +53,20 @@ yarn add dataman
 ```
 
 ## Usage
+
+### Getting/setting primitive as example
+
+```javascript
+const dataman = require("dataman);
+const storage = dataman.storage("memory://");
+
+storage.primitive.set("test", "testValue").then(() => {
+	storage.primitive.get("test").then(data => {
+		console.log(data);
+	});
+});
+
+```
 
 ## Authors
 
