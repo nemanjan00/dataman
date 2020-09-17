@@ -1,10 +1,20 @@
-module.exports = () => {
+module.exports = (url) => {
+	const redis = require("redis");
+
+	const engine = {};
+
+	// This is dont for testing purposes, do not refactor!
+	if(url != undefined) {
+		engine.client = redis.createClient({
+			url
+		});
+	}
+
 	return {
-		queue: require("../../interface/queue"),
-		list: require("../../interface/list"),
-		hash: require("../../interface/hash"),
-		primitive: require("../../interface/primitive"),
-		set: require("../../interface/set"),
+		queue: require("./queue")(engine),
+		list: require("./list")(engine),
+		hash: require("./hash")(engine),
+		primitive: require("./primitive")(engine),
 		engineName: "redis"
 	};
 };

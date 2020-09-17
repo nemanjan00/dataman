@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 module.exports = {
 	/**
 	 * Set element value
@@ -5,8 +7,8 @@ module.exports = {
 	 * @param {string|number|boolean} element Element
 	 * @returns {Promise<boolean>}
 	 */
-	set: function(queueName, element) {
-		console.log("This is interface, do not call it", queueName, element);
+	set: function(hashName, element) {
+		console.log("This is interface, do not call it", hashName, element);
 	},
 
 	/**
@@ -14,8 +16,8 @@ module.exports = {
 	 * @param {string} name Name
 	 * @returns {Promise}
 	 */
-	get: function(queueName) {
-		console.log("This is interface, do not call it", queueName);
+	get: function(hashName) {
+		console.log("This is interface, do not call it", hashName);
 	},
 
 	/**

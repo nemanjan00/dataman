@@ -37,8 +37,6 @@ Library for managing data in redis-like storage engines
 
 * String/Number/Boolean
 
-* Set
-
 ## Installation
 
 ### npm

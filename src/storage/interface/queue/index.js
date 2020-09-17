@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 module.exports = {
 	/**
 	 * Push element to queue
