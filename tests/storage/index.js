@@ -54,6 +54,24 @@ describe("watch", function() {
 						done();
 					}).catch(done);
 				});
+
+				it("Expire primitives", function(done) {
+					engine.primitive.expire("test", 1).then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Does not return expired primitives", function(done) {
+					setTimeout(() => {
+						engine.primitive.get("test").then((result) => {
+							if (result) {
+								return done(new Error("Incorrect value returned"));
+							}
+
+							done();
+						}).catch(done);
+					}, 1001);
+				});
 			});
 
 			describe("hash", function() {
