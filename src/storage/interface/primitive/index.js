@@ -27,6 +27,15 @@ module.exports = {
 	 */
 	delete: function(name) {
 		console.log("This is interface, do not call it", name);
+	},
+	
+	/**
+	 * Expire
+	 * @param {string} name Name
+	 * @returns {Promise}
+	 */
+	expire: function(name, seconds) {
+		console.log("This is interface, do not call it", name, seconds);
 	}
 };
 

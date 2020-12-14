@@ -14,6 +14,14 @@ module.exports = (engine) => {
 			delete engine.database[name];
 
 			return Promise.resolve();
+		},
+
+		expire: function(name, seconds) {
+			setTimeout(() => {
+				delete engine.database[name];
+			}, seconds * 1000);
+
+			return Promise.resolve();
 		}
 	};
 };

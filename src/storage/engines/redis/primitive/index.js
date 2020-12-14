@@ -34,6 +34,18 @@ module.exports = (engine) => {
 					resolve(data);
 				});
 			});
+		},
+
+		expire: function(name, seconds) {
+			return new Promise((resolve, reject) => {
+				engine.client.expire(name, seconds, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					resolve(data);
+				});
+			});
 		}
 	};
 };
