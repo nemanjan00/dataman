@@ -70,7 +70,7 @@ describe("watch", function() {
 
 							done();
 						}).catch(done);
-					}, 1001);
+					}, 1000);
 				});
 			});
 
