@@ -55,6 +55,8 @@ module.exports = (engine) => {
 						return reject(error);
 					}
 
+					data = data.map(_data => JSON.parse(_data));
+
 					resolve(data);
 				});
 			});
