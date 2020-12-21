@@ -46,6 +46,18 @@ module.exports = (engine) => {
 					resolve(data);
 				});
 			});
+		},
+
+		lrange: function(name, start, stop) {
+			return new Promise((resolve, reject) => {
+				engine.client.lrange(name, start, stop, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					resolve(data);
+				});
+			});
 		}
 	};
 };

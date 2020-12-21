@@ -30,6 +30,18 @@ module.exports = (engine) => {
 			delete engine.database[name];
 
 			return Promise.resolve();
+		},
+
+		lrange: function(name, start, stop) {
+			let data;
+
+			if (stop < 0) {
+				data = engine.database[name].splice(start);
+			} else {
+				data = engine.database[name].splice(start, stop);
+			}
+
+			return Promise.resolve(data);
 		}
 	};
 };

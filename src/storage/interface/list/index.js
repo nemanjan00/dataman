@@ -36,6 +36,17 @@ module.exports = {
 	 */
 	delete: function(name) {
 		console.log("This is interface, do not call it", name);
+	},
+
+	/**
+	 * lrange
+	 * @param {String} name Name
+	 * @param {Number} start list start index
+	 * @param {Number} stop list stop index
+	 * @returns {Promise}
+	 */
+	lrange: function(name, start, stop) {
+		console.log("This is interface, do not call it", name, start, stop);
 	}
 };
 
