@@ -1,6 +1,6 @@
 {
   "name": "dataman",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Library for managing data in redis-like storage engines",
   "main": "src/index.js",
   "scripts": {
