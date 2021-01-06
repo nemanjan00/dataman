@@ -22,6 +22,16 @@ module.exports = (engine) => {
 			}, seconds * 1000);
 
 			return Promise.resolve();
+		},
+
+		setnx: function(name, element) {
+			if (engine.database[name]) {
+				return Promise.resolve(0);
+			}
+
+			engine.database[name] = element;
+
+			return Promise.resolve(1);
 		}
 	};
 };

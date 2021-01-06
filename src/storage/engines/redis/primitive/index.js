@@ -46,6 +46,18 @@ module.exports = (engine) => {
 					resolve(data);
 				});
 			});
+		},
+
+		setnx: function(name, element) {
+			return new Promise((resolve, reject) => {
+				engine.client.setnx(name, element, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					resolve(data);
+				});
+			});
 		}
 	};
 };
