@@ -54,6 +54,8 @@ storage.primitive.set("test", "testValue").then(() => {
 
 * String/Number/Boolean
 
+* Set
+
 ## Installation
 
 ### npm
