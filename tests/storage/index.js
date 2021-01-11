@@ -222,6 +222,70 @@ describe("watch", function() {
 					}).catch(done);
 				});
 			});
+
+			describe("set", function() {
+				const engine = engines[engineName]();
+
+				it("Adds to set", function(done) {
+					engine.set.add("testSet", 1).then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Add one more element to set", function(done) {
+					engine.set.add("testSet", 2).then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Checks if element exists in set", function(done) {
+					engine.set.exists("testSet", 2).then((result) => {
+						if(result == 1) {
+							return done();
+						}
+
+						done(new Error("Incorrect value returned"));
+					}).catch(done);
+				});
+
+				it("Returns correct length", function(done) {
+					engine.set.get("testSet").then((result) => {
+
+						if(result.length == 2) {
+							return done();
+						}
+
+						return done(new Error("Incorrect value returned"));
+					}).catch(done);
+				});
+
+				it("Deletes element from set", function(done) {
+					engine.set.delete("testSet", 1).then(() => {
+						done();
+					}).catch(done);
+				});
+
+				it("Returns correct length", function(done) {
+					engine.set.get("testSet").then((result) => {
+
+						if(result.length == 1) {
+							return done();
+						}
+
+						return done(new Error("Incorrect value returned"));
+					}).catch(done);
+				});
+
+				it("Does not return deleted set element", function(done) {
+					engine.set.exists("testSet", 1).then((result) => {
+						if(result != 0) {
+							return done(new Error("Incorrect value returned"));
+						}
+
+						done();
+					}).catch(done);
+				});
+			});
 		});
 	});
 });

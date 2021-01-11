@@ -1,8 +1,8 @@
 module.exports = (engine) => {
 	return {
-		push: function(name, element) {
+		add: function(name, element) {
 			return new Promise((resolve, reject) => {
-				engine.client.lpush(name, element, (error, data) => {
+				engine.client.sadd(name, element, (error, data) => {
 					if(error) {
 						return reject(error);
 					}
@@ -12,9 +12,9 @@ module.exports = (engine) => {
 			});
 		},
 
-		pop: function(name) {
+		delete: function(name, element) {
 			return new Promise((resolve, reject) => {
-				engine.client.lpop(name, (error, data) => {
+				engine.client.srem(name, element, (error, data) => {
 					if(error) {
 						return reject(error);
 					}
@@ -24,9 +24,9 @@ module.exports = (engine) => {
 			});
 		},
 
-		length: function(name) {
+		exists: function(name, element) {
 			return new Promise((resolve, reject) => {
-				engine.client.llen(name, (error, data) => {
+				engine.client.sismember(name, element, (error, data) => {
 					if(error) {
 						return reject(error);
 					}
@@ -36,21 +36,9 @@ module.exports = (engine) => {
 			});
 		},
 
-		delete: function(name) {
+		get: function(name) {
 			return new Promise((resolve, reject) => {
-				engine.client.del(name, (error, data) => {
-					if(error) {
-						return reject(error);
-					}
-
-					resolve(data);
-				});
-			});
-		},
-
-		lrange: function(name, start, stop) {
-			return new Promise((resolve, reject) => {
-				engine.client.lrange(name, start, stop, (error, data) => {
+				engine.client.smembers(name, (error, data) => {
 					if(error) {
 						return reject(error);
 					}

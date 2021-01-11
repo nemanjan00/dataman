@@ -13,6 +13,7 @@ module.exports = (url) => {
 		list: require("./list")(engine),
 		hash: require("./hash")(engine),
 		primitive: require("./primitive")(engine),
+		set: require("./set")(engine),
 		engineName: "redis"
 	};
 };

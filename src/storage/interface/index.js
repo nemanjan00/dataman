@@ -6,6 +6,7 @@ module.exports = {
 	list: require("./list"),
 	hash: require("./hash"),
 	primitive: require("./primitive"),
+	set: require("./set"),
 	engineName: "engineName"
 };
 
