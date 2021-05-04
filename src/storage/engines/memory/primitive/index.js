@@ -10,6 +10,16 @@ module.exports = (engine) => {
 			return Promise.resolve(engine.database[name]);
 		},
 
+		multiGet: function(names) {
+			const results = {};
+
+			names.forEach(name => {
+				results[name] = engine.database[name];
+			});
+
+			return Promise.resolve(results);
+		},
+
 		delete: function(name) {
 			delete engine.database[name];
 

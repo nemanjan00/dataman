@@ -21,6 +21,15 @@ module.exports = {
 	},
 
 	/**
+	 * Get multiple values value
+	 * @param {string[]} names Names
+	 * @returns {Promise}
+	 */
+	multiGet: function(name) {
+		console.log("This is interface, do not call it", name);
+	},
+
+	/**
 	 * Delete
 	 * @param {string} name Name
 	 * @returns {Promise}

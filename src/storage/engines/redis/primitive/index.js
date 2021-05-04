@@ -24,6 +24,26 @@ module.exports = (engine) => {
 			});
 		},
 
+		multiGet: function(names) {
+			return new Promise((resolve, reject) => {
+				engine.client.mget(...name, (error, data) => {
+					if(error) {
+						return reject(error);
+					}
+
+					const result = {};
+
+					names.forEach((name, id) => {
+						if(data[id] !== null) {
+							result[name] = data[id];
+						}
+					});
+
+					resolve(result);
+				});
+			});
+		},
+
 		delete: function(name) {
 			return new Promise((resolve, reject) => {
 				engine.client.del(name, (error, data) => {
